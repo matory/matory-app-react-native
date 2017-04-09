@@ -13,10 +13,8 @@ class Mall extends Component {
     }
 
     componentDidMount() {
-        console.log('this running ?');
         const hostAPI = 'https://udin.us/matory/api/'
         axios.get(hostAPI + '/malls').then((response) => {
-          console.log('isi response : ', response);
           this.setState({
             malls: response.data
           })
@@ -60,15 +58,16 @@ class Mall extends Component {
                                                     </Body>
                                                 </TouchableOpacity>
                                             </CardItem>
-                                            <Button transparent>
-                                                <Icon active name="thumbs-up" />
-                                                <Text>12 Likes</Text>
-                                            </Button>
-                                            <Button transparent>
-                                                <Icon active name="chatbubbles" />
-                                                <Text>4 Comments</Text>
-                                            </Button>
-                                            <Text>11h ago</Text>
+                                            <CardItem style={styles.storeCount}>
+                                              <Button transparent>
+                                                <Icon active name="md-shirt" />
+                                                <Text>12 Fashion</Text>
+                                              </Button>
+                                              <Button transparent>
+                                                <Icon active name="md-wine" />
+                                                <Text>4 Food</Text>
+                                              </Button>
+                                            </CardItem>
                                         </Card>
                                     </View>
                                 )
@@ -78,6 +77,12 @@ class Mall extends Component {
             </Container>
         )
     }
+}
+
+const styles = {
+  storeCount: {
+    margin: -15,
+  }
 }
 
 export default Mall
