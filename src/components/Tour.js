@@ -5,7 +5,10 @@ class Tour extends Component{
   render () {
     return (
       <View style={styles.Header}>
-        <Image style={styles.imageHeader} source={{uri:"https://udin.us/matory/images/malls/cover-central-park.jpg"}}/>
+        <Image style={styles.imageHeader} source={{uri:"https://udin.us/matory/images/malls/cover-central-park.jpg"}}>
+          <Text style={styles.mallName}>Nama Mall</Text>
+        </Image>
+
       </View>
     )
   }
@@ -20,6 +23,12 @@ const styles = {
     height: '100%',
     width:'100%',
     resizeMode:'cover',
+  },
+  mallName: {
+    fontSize: 30,
+    color: '#ffffff',
+    marginTop: '25%',
+    marginLeft: '15%'
   }
 }
 
