@@ -1,0 +1,83 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "city": "Bandung",
+      "urlImage": "https://simalesmandi.files.wordpress.com/2015/03/indonesia-tourismcom.jpg",
+      "tour": [
+        {
+          "id": 1,
+          "title": "Alun-Alun Bandung",
+          "content": "Waktu pertama berdirinya kota bandung, kuda merupakan alat trasportasi pertama",
+          "imageUrl": "http://petatempatwisata.com/wp-content/uploads/2016/04/Alun-Alun-Kota-Bandung-2.jpg"
+        },{
+          "id": 1,
+          "title": "Dago",
+          "content": "Waktu pertama berdirinya kota bandung, kuda merupakan alat trasportasi pertama",
+          "imageUrl": "http://2.bp.blogspot.com/-M4wFnKr0zhE/VbnUUFuZw4I/AAAAAAAAAqs/zl2snbZWoZo/s1600/20150419_104409.jpg"
+        }
+      ]
+    },{
+      "id": 2,
+      "city": "Sukabumi",
+      "urlImage":"http://www.kemendagri.go.id/media/article/images/2016/04/22/s/u/sukabumi_adipura_roundabout_00_3.jpg",
+      "tour": [
+        {
+          "id": 1,
+          "title": "Geopark ciletuh",
+          "content": "Geopark Ciletuh Sukabumi ini adalah salah satu lokasi liburan keren yang patut untuk kalian pertimbangan",
+          "imageUrl": "http://bisniswisata.co.id/wp-content/uploads/2015/11/Geopark-Ciletuh.jpg"
+        }
+      ]
+    },{
+      "id": 3,
+      "city": "Bogor",
+      "urlImage":"https://chanailufar.files.wordpress.com/2011/11/bogoristana-ii.jpg",
+      "tour": [
+        {
+          "id": 1,
+          "title": "Geopark ciletuh",
+          "content": "Geopark Ciletuh Sukabumi ini adalah salah satu lokasi liburan keren yang patut untuk kalian pertimbangan",
+          "imageUrl": "http://bisniswisata.co.id/wp-content/uploads/2015/11/Geopark-Ciletuh.jpg"
+        }
+      ]
+    },{
+      "id": 4,
+      "city": "Garut",
+      "urlImage":"http://archive.itoday.co.id/wp-content/uploads/2013/01/garut.jpg",
+      "tour": [
+        {
+          "id": 1,
+          "title": "Geopark ciletuh",
+          "content": "Geopark Ciletuh Sukabumi ini adalah salah satu lokasi liburan keren yang patut untuk kalian pertimbangan",
+          "imageUrl": "http://bisniswisata.co.id/wp-content/uploads/2015/11/Geopark-Ciletuh.jpg"
+        }
+      ]
+    },{
+      "id": 5,
+      "city": "Cianjur",
+      "urlImage":"http://4.bp.blogspot.com/-HRSkwzjK33A/Vg3sa4ykcJI/AAAAAAAAAF4/k6BruqteE-Q/s1600/kota-cianjur.jpg",
+      "tour": [
+        {
+          "id": 1,
+          "title": "Geopark ciletuh",
+          "content": "Geopark Ciletuh Sukabumi ini adalah salah satu lokasi liburan keren yang patut untuk kalian pertimbangan",
+          "imageUrl": "http://bisniswisata.co.id/wp-content/uploads/2015/11/Geopark-Ciletuh.jpg"
+        }
+      ]
+    },{
+      "id": 6,
+      "city": "Banjar",
+      "urlImage":"http://bali.panduanwisata.id/files/2011/10/air-panas-banjar3.jpg",
+      "tour": [
+        {
+          "id": 1,
+          "title": "Geopark ciletuh",
+          "content": "Geopark Ciletuh Sukabumi ini adalah salah satu lokasi liburan keren yang patut untuk kalian pertimbangan",
+          "imageUrl": "http://bisniswisata.co.id/wp-content/uploads/2015/11/Geopark-Ciletuh.jpg"
+        }
+      ]
+    }
+  ],
+  "profile": { "name": "Dudung" }
+}
