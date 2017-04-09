@@ -1,1 +1,1 @@
-# TRIPTO
+# Matory App with React Native
