@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { View, Image } from 'react-native'
+import { View, Image, ActivityIndicator } from 'react-native'
 import { Container, Content, List, ListItem, Thumbnail, Text, Body, InputGroup, Input, Icon, Tabs, Tab } from 'native-base';
 import axios from 'axios'
+import _ from 'lodash'
 
 import StoreList from './StoreList'
 
@@ -15,13 +16,35 @@ class Tour extends Component{
 
   componentDidMount(){
     const hostAPI = 'https://udin.us/matory/api/'
+    let self = this
     axios.get(hostAPI + '/mall/1/all-store').then((response) => {
       console.log('dapat toko apa aja ', response.data);
-      this.setState({
+      self.setState({
         stores: response.data
       })
+    }).catch((err) => {
+      console.log('error when trying to get all data store : ', err);
     })
   }
+
+  listFloor(){
+    let floorName = _.uniqBy(this.state.stores, 'floor_name');
+    console.log('floorName : ', floorName);
+    return (
+      <Tabs>
+      {
+        floorName.map((store, index) => {
+        return (
+          <Tab key={index} heading={store.floor_name}>
+            <StoreList/>
+          </Tab>
+        )
+      })
+      }
+      </Tabs>
+    )
+  }
+
   render () {
     return (
       <Container style={{marginTop: '15%'}}>
@@ -30,31 +53,12 @@ class Tour extends Component{
                 <Input placeholder='Search store'/>
                 <Icon name='search'/>
           </InputGroup>
-          <Tabs>
-                <Tab heading="LG">
-                    <StoreList/>
-                </Tab>
-                <Tab heading="L1">
-                  <StoreList/>
-                </Tab>
-                <Tab heading="G">
-                    <StoreList/>
-                </Tab>
-                <Tab heading="1">
-                    <StoreList/>
-                </Tab>
-                <Tab heading="2">
-                    <StoreList/>
-                </Tab>
-                <Tab heading="3">
-                    <Text>Lalalala</Text>
-                    <StoreList/>
-                </Tab>
-                <Tab heading="4">
-                    <Text>Lalalala</Text>
-                    <StoreList/>
-                </Tab>
-            </Tabs>
+          {
+            this.state.stores.length == 0
+            ? <ActivityIndicator size='large' style={{marginTop: '35%'}} animation={true}/>
+            : this.listFloor()
+          }
+
         </Content>
     </Container>
     )
