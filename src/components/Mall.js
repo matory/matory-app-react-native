@@ -27,7 +27,7 @@ class Mall extends Component {
             <Container>
                 <Content>
                         {this.state.malls.length === 0
-                            ? <ActivityIndicator animation={true}/>
+                            ? <ActivityIndicator size='large' style={{marginTop: '35%'}} animation={true}/>
                             : this.state.malls.map((item, index) => {
                                 return (
                                     <View key={index} style={{

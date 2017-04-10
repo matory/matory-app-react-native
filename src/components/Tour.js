@@ -1,32 +1,60 @@
 import React, { Component } from 'react'
 import { View, Image } from 'react-native'
-import { Container, Content, List, ListItem, Thumbnail, Text, Body, InputGroup, Input, Icon } from 'native-base';
+import { Container, Content, List, ListItem, Thumbnail, Text, Body, InputGroup, Input, Icon, Tabs, Tab } from 'native-base';
+import axios from 'axios'
+
+import StoreList from './StoreList'
 
 class Tour extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      stores: []
+    }
+  }
+
+  componentDidMount(){
+    const hostAPI = 'https://udin.us/matory/api/'
+    axios.get(hostAPI + '/mall/1/all-store').then((response) => {
+      console.log('dapat toko apa aja ', response.data);
+      this.setState({
+        stores: response.data
+      })
+    })
+  }
   render () {
     return (
       <Container style={{marginTop: '15%'}}>
         <Content>
           <InputGroup>
-                        <Input placeholder='Search store'/>
-                        <Icon name='search' style={{color:'#00C497'}}/>
-                    </InputGroup>
-            <List>
-                <ListItem>
-                    <Thumbnail source={require('../images/avatar/avatar-1.png')} />
-                    <Body>
-                        <Text>H&M</Text>
-                        <Text note>Floor 1 - Fashion Store</Text>
-                    </Body>
-                </ListItem>
-                <ListItem>
-                    <Thumbnail source={require('../images/avatar/avatar-1.png')} />
-                    <Body>
-                        <Text>Gramedia</Text>
-                        <Text note>Floor 1 - Book Store</Text>
-                    </Body>
-                </ListItem>
-            </List>
+                <Input placeholder='Search store'/>
+                <Icon name='search'/>
+          </InputGroup>
+          <Tabs>
+                <Tab heading="LG">
+                    <StoreList/>
+                </Tab>
+                <Tab heading="L1">
+                  <StoreList/>
+                </Tab>
+                <Tab heading="G">
+                    <StoreList/>
+                </Tab>
+                <Tab heading="1">
+                    <StoreList/>
+                </Tab>
+                <Tab heading="2">
+                    <StoreList/>
+                </Tab>
+                <Tab heading="3">
+                    <Text>Lalalala</Text>
+                    <StoreList/>
+                </Tab>
+                <Tab heading="4">
+                    <Text>Lalalala</Text>
+                    <StoreList/>
+                </Tab>
+            </Tabs>
         </Content>
     </Container>
     )
