@@ -1,22 +1,41 @@
 import React, { Component } from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Image } from 'react-native'
+import { Container, Content, List, ListItem, Thumbnail, Text, Body, InputGroup, Input, Icon } from 'native-base';
 
 class Tour extends Component{
   render () {
     return (
-      <View style={styles.Header}>
-        <Image style={styles.imageHeader} source={{uri:"https://udin.us/matory/images/malls/cover-central-park.jpg"}}>
-          <Text style={styles.mallName}>Nama Mall</Text>
-        </Image>
-
-      </View>
+      <Container style={{marginTop: '15%'}}>
+        <Content>
+          <InputGroup>
+                        <Input placeholder='Search store'/>
+                        <Icon name='search' style={{color:'#00C497'}}/>
+                    </InputGroup>
+            <List>
+                <ListItem>
+                    <Thumbnail source={require('../images/avatar/avatar-1.png')} />
+                    <Body>
+                        <Text>H&M</Text>
+                        <Text note>Floor 1 - Fashion Store</Text>
+                    </Body>
+                </ListItem>
+                <ListItem>
+                    <Thumbnail source={require('../images/avatar/avatar-1.png')} />
+                    <Body>
+                        <Text>Gramedia</Text>
+                        <Text note>Floor 1 - Book Store</Text>
+                    </Body>
+                </ListItem>
+            </List>
+        </Content>
+    </Container>
     )
   }
 }
 
 const styles = {
   Header: {
-    height: '50%',
+    height: '20%',
     width: '100%',
   },
   imageHeader: {
@@ -27,8 +46,8 @@ const styles = {
   mallName: {
     fontSize: 30,
     color: '#ffffff',
-    marginTop: '25%',
-    marginLeft: '15%'
+    marginTop: '15%',
+    marginLeft: '6%'
   }
 }
 

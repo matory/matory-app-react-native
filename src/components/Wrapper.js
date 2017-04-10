@@ -10,7 +10,7 @@ const Wrapper = (props) => {
     <Router>
       <Scene key="root">
         <Scene key="Home" component={Home} initial={true} hideNavBar={true} />
-        <Scene key="Tour" component={Tour} title="Tour" hideNavBar={true} />
+        <Scene key="Tour" component={Tour} title="Nama Mall" hideNavBar={false} />
         <Scene key="Itenerary" component={Itenerary} title="Itenerary"/>
       </Scene>
     </Router>
